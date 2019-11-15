@@ -25,7 +25,7 @@ func Example() {
 	// hello world (12)
 }
 
-func ExampleTime() {
+func Example_time() {
 	flush := func(ms []interface{}) error {
 		for _, m := range ms {
 			fmt.Println(m.(string))
@@ -39,7 +39,7 @@ func ExampleTime() {
 	// 🍪
 }
 
-func ExampleNow() {
+func Example_now() {
 	flush := func(ms []interface{}) error {
 		for _, m := range ms {
 			fmt.Println(m.(string))

@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/notduncansmith/bbq?status.svg)](https://godoc.org/github.com/notduncansmith/bbq) [![Build Status](https://travis-ci.com/notduncansmith/bbq.svg?branch=master)](https://travis-ci.com/notduncansmith/bbq) [![codecov](https://codecov.io/gh/notduncansmith/bbq/branch/master/graph/badge.svg)](https://codecov.io/gh/notduncansmith/bbq)
 
-bbq allows you to batch messages by time or count, then flush them to a function of your choice. bbq is thread-safe, utilizing Go's native `sync.RWMutex`. Flushes are synchronous.
+bbq allows you to batch messages by time or count, then flush them to a function of your choice. bbq is thread-safe, utilizing Go's native `sync.RWMutex`. Flushes are synchronous. If the queue is empty, the flush function will not be called.
 
 ## Usage
 

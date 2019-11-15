@@ -1,6 +1,6 @@
 # bbq - a basic batch queue for Go
 
-[![GoDoc](https://godoc.org/github.com/notduncansmith/bbq?status.svg)](https://godoc.org/github.com/notduncansmith/bbq) [![Build Status](https://travis-ci.com/notduncansmith/bbq.svg?branch=master)](https://travis-ci.com/notduncansmith/bbq)
+[![GoDoc](https://godoc.org/github.com/notduncansmith/bbq?status.svg)](https://godoc.org/github.com/notduncansmith/bbq) [![Build Status](https://travis-ci.com/notduncansmith/bbq.svg?branch=master)](https://travis-ci.com/notduncansmith/bbq) [![Code Coverage](https://img.shields.io/codecov/c/github/notduncansmith/bbq/master?label=codecov.io&logo=codecov&token=5b3f36af-59e8-4556-8345-a81126c00822)](https://img.shields.io/codecov/c/github/notduncansmith/bbq/master?label=codecov.io&logo=codecov&token=5b3f36af-59e8-4556-8345-a81126c00822)
 
 bbq allows you to batch messages by time or count, then flush them to a function of your choice. bbq is thread-safe, utilizing Go's native `sync.RWMutex`. Flushes are synchronous.
 

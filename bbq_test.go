@@ -162,3 +162,16 @@ func TestFlushTimeout(t *testing.T) {
 		t.Errorf("Expected 1 flush, got %v", flushes)
 	}
 }
+
+func TestDefaults(t *testing.T) {
+	flush := func(ms []interface{}) error {
+		return nil
+	}
+	q := NewBatchQueue(flush, BatchQueueOptions{})
+	if q.flushTime != DefaultOptions.FlushTime {
+		t.Errorf("Expected default flush time, got %v", q.flushTime)
+	}
+	if q.flushCount != DefaultOptions.FlushCount {
+		t.Errorf("Expected default flush count, got %v", q.flushCount)
+	}
+}

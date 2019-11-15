@@ -37,6 +37,12 @@ var DefaultOptions = BatchQueueOptions{time.Second, 1024}
 
 // NewBatchQueue returns a queue
 func NewBatchQueue(flush Flush, opts BatchQueueOptions) *BatchQueue {
+	if opts.FlushTime == 0 {
+		opts.FlushTime = DefaultOptions.FlushTime
+	}
+	if opts.FlushCount == 0 {
+		opts.FlushCount = DefaultOptions.FlushCount
+	}
 	mut := &sync.RWMutex{}
 	items := []interface{}{}
 	cbs := []Callback{}

@@ -16,16 +16,16 @@ import (
 
 func main() {
     flush := func(ms []interface{}) error {
-		for _, m := range ms {
-			fmt.Println(m.(string))
-		}
-		return nil
+	for _, m := range ms {
+		fmt.Println(m.(string))
 	}
-	q := bbq.NewBatchQueue(flush, BatchQueueOptions{time.Millisecond, 2})
-	q.Enqueue("🍖")
-	time.Sleep(time.Millisecond)
-	// Output:
-	// 🍖
+	return nil
+    }
+    q := bbq.NewBatchQueue(flush, BatchQueueOptions{time.Millisecond, 2})
+    q.Enqueue("🍖")
+    time.Sleep(time.Millisecond)
+    // Output:
+    // 🍖
 }
 ```
 

@@ -52,7 +52,7 @@ func NewBatchQueue(flush Flush, opts BatchQueueOptions) *BatchQueue {
 // Enqueue puts an item on the batch queue
 func (q *BatchQueue) Enqueue(item interface{}) Callback {
 	q.mut.Lock()
-	cb := make(chan error)
+	cb := make(chan error, 1)
 	q.items = append(q.items, item)
 	q.cbs = append(q.cbs, cb)
 

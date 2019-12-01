@@ -145,7 +145,7 @@ func TestErrCallback(t *testing.T) {
 func TestFlushTimeout(t *testing.T) {
 	flushes := 0
 	flush := func(ms []interface{}) error {
-		flushes += 1
+		flushes++
 		return nil
 	}
 	q := NewBatchQueue(flush, BatchQueueOptions{10 * time.Millisecond, 3})
